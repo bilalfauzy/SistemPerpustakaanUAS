@@ -52,12 +52,7 @@ public class ListBukuActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetDataBuku> call, Response<GetDataBuku> response) {
                 List<DataBuku> listBuku = response.body().getListBuku();
-                listAdapter = new ListBukuAdapter(listBuku, getApplicationContext(), new ClickListener() {
-                    @Override
-                    public void onPositionClicked(int position) {
-                        Toast.makeText(getApplicationContext(), "di klik", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                listAdapter = new ListBukuAdapter(listBuku, getApplicationContext());
                 rvListBuku.setAdapter(listAdapter);
                 Log.d("Retrofit Get", "Jumlah data buku :" +String.valueOf(listBuku.size()));
             }

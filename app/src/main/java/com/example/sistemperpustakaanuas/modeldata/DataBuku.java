@@ -8,7 +8,7 @@ public class DataBuku {
     @SerializedName("judul")
     private String judul_buku;
     @SerializedName("sampul")
-    private int sampul_buku;
+    private String sampul_buku;
     @SerializedName("penulis")
     private String penulis_buku;
     @SerializedName("stok")
@@ -22,7 +22,7 @@ public class DataBuku {
     @SerializedName("baris")
     private String rak_baris_buku;
 
-    public DataBuku(String id_buku, String judul_buku, int sampul_buku, String penulis_buku, int stok_buku, String penerbit_buku, String kategori_buku, String rak_buku, String rak_baris_buku) {
+    public DataBuku(String id_buku, String judul_buku, String sampul_buku, String penulis_buku, int stok_buku, String penerbit_buku, String kategori_buku, String rak_buku, String rak_baris_buku) {
         this.id_buku = id_buku;
         this.judul_buku = judul_buku;
         this.sampul_buku = sampul_buku;
@@ -50,11 +50,11 @@ public class DataBuku {
         this.judul_buku = judul_buku;
     }
 
-    public int getSampul_buku() {
+    public String getSampul_buku() {
         return sampul_buku;
     }
 
-    public void setSampul_buku(int sampul_buku) {
+    public void setSampul_buku(String sampul_buku) {
         this.sampul_buku = sampul_buku;
     }
 

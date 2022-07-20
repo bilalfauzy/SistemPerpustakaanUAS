@@ -1,17 +1,20 @@
 package com.example.sistemperpustakaanuas.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sistemperpustakaanuas.ClickListener;
 import com.example.sistemperpustakaanuas.R;
+import com.example.sistemperpustakaanuas.activity.DetailBukuActivity;
 import com.example.sistemperpustakaanuas.modeldata.DataBuku;
 
 import java.lang.ref.WeakReference;
@@ -20,18 +23,16 @@ import java.util.List;
 public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.MyViewHolder>{
     private List<DataBuku> listDataBuku;
     private Context context;
-    private final ClickListener clickListener;
 
-    public ListBukuAdapter(List<DataBuku> mListDataBuku, Context mContext, ClickListener mClickListener){
+    public ListBukuAdapter(List<DataBuku> mListDataBuku, Context mContext){
         listDataBuku = mListDataBuku;
         context = mContext;
-        clickListener = mClickListener;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_buku, parent, false), clickListener);
+        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_buku, parent, false));
     }
 
     @Override
@@ -42,10 +43,20 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.MyView
 
         holder.tvJudulBuku.setText("Judul : " +dataBuku.getJudul_buku());
         holder.tvPenulis.setText("Penulis : " +dataBuku.getPenulis_buku());
-        holder.tvPenerbit.setText("Penerbit : " +dataBuku.getPenerbit_buku());
-        holder.tvKategori.setText("Kategori : " +dataBuku.getKategori_buku());
 
-        holder.itemView.setOnClickListener((View.OnClickListener) this);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DetailBukuActivity.class);
+                view.getContext().startActivity(intent
+                        .putExtra("sampul_buku", dataBuku.getSampul_buku())
+                        .putExtra("judul_buku", dataBuku.getJudul_buku())
+                        .putExtra("penulis", dataBuku.getPenulis_buku())
+                        .putExtra("penerbit", dataBuku.getPenerbit_buku())
+                        .putExtra("kategori", dataBuku.getKategori_buku())
+                        .putExtra("stok_buku", dataBuku.getStok_buku()));
+            }
+        });
 
     }
 
@@ -54,15 +65,12 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.MyView
         return listDataBuku.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView tvJudulBuku, tvPenerbit, tvKategori, tvPenulis;
         public ImageView imgBuku, imgArrow;
-        private WeakReference<ClickListener> listenerRef;
 
-        public MyViewHolder(@NonNull View itemView, ClickListener clickListener) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            listenerRef = new WeakReference<>(ListBukuAdapter.this.clickListener);
 
             tvJudulBuku = itemView.findViewById(R.id.tvJudul);
             tvPenerbit = itemView.findViewById(R.id.tvPenerbit);
@@ -72,9 +80,5 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.MyView
             imgArrow = itemView.findViewById(R.id.imgArrow);
         }
 
-        @Override
-        public void onClick(View view) {
-            listenerRef.get().onPositionClicked(getAdapterPosition());
-        }
     }
 }
