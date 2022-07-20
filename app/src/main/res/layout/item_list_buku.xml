@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundsilver"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/kontainer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/imgArrow">
+
+            <ImageView
+                android:id="@+id/imgBuku"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/imgBuku"
+                android:textStyle="bold"
+                tools:text="JUDUL NICH" />
+
+            <TextView
+                android:id="@+id/tvPenulis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvJudul"
+                android:layout_alignStart="@+id/tvJudul"
+                tools:text="ini penulis" />
+
+            <TextView
+                android:id="@+id/tvPenerbit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPenulis"
+                android:layout_alignStart="@+id/tvJudul"
+                tools:text="ini penerbit" />
+
+            <TextView
+                android:id="@+id/tvKategori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPenerbit"
+                android:layout_alignStart="@+id/tvJudul"
+                tools:text="ini kategori" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            tools:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </RelativeLayout>
+
+</RelativeLayout>
