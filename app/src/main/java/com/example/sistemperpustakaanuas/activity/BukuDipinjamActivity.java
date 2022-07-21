@@ -1,5 +1,6 @@
 package com.example.sistemperpustakaanuas.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -28,6 +29,8 @@ public class BukuDipinjamActivity extends AppCompatActivity{
     private ApiInterface mApiInterface;
     private RecyclerView.Adapter listAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private DataBuku dataBuku;
+    private List<DataBuku> listDataBuku;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,14 +45,22 @@ public class BukuDipinjamActivity extends AppCompatActivity{
 
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
 
-        ApiCallback apiCallback = new ApiCallback() {
-            @Override
-            public void onSuccessGetBuku(List<DataBuku> listBuku) {
-                listAdapter = new ListPinjamanAdapter(listBuku, getApplicationContext());
-                rvListBuku.setAdapter(listAdapter);
+        Intent getIntent = getIntent();
+        String idBuku = getIntent.getStringExtra("id_buku");
+        String sampulBuku = getIntent.getStringExtra("sampul_buku");
+        String judulBuku = getIntent.getStringExtra("judul_buku");
+        String penulisBuku = getIntent.getStringExtra("penulis");
+        String penerbitBuku = getIntent.getStringExtra("penerbit");
+        String kategoriBuku = getIntent.getStringExtra("kategori");
+        String stokBuku = getIntent.getStringExtra("stok_buku");
+        String rak = getIntent.getStringExtra("rak");
+        String rakBaris = getIntent.getStringExtra("rak_baris");
 
-            }
-        };
+        listDataBuku.add(new DataBuku(idBuku, judulBuku, sampulBuku, penulisBuku, stokBuku, penerbitBuku, kategoriBuku, rak, rakBaris));
+
+        listAdapter = new ListPinjamanAdapter(listDataBuku, getApplicationContext());
+        rvListBuku.setAdapter(listAdapter);
+
     }
 
 }

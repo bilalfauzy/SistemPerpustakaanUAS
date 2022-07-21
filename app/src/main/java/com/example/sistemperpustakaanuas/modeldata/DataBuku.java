@@ -12,7 +12,7 @@ public class DataBuku {
     @SerializedName("penulis")
     private String penulis_buku;
     @SerializedName("stok")
-    private int stok_buku;
+    private String stok_buku;
     @SerializedName("nama_penerbit")
     private String penerbit_buku;
     @SerializedName("nama_kategori")
@@ -22,7 +22,7 @@ public class DataBuku {
     @SerializedName("baris")
     private String rak_baris_buku;
 
-    public DataBuku(String id_buku, String judul_buku, String sampul_buku, String penulis_buku, int stok_buku, String penerbit_buku, String kategori_buku, String rak_buku, String rak_baris_buku) {
+    public DataBuku(String id_buku, String judul_buku, String sampul_buku, String penulis_buku, String stok_buku, String penerbit_buku, String kategori_buku, String rak_buku, String rak_baris_buku) {
         this.id_buku = id_buku;
         this.judul_buku = judul_buku;
         this.sampul_buku = sampul_buku;
@@ -66,11 +66,11 @@ public class DataBuku {
         this.penulis_buku = penulis_buku;
     }
 
-    public int getStok_buku() {
+    public String getStok_buku() {
         return stok_buku;
     }
 
-    public void setStok_buku(int stok_buku) {
+    public void setStok_buku(String stok_buku) {
         this.stok_buku = stok_buku;
     }
 

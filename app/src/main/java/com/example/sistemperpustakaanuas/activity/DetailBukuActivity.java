@@ -19,7 +19,7 @@ import java.util.List;
 public class DetailBukuActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView sampulBuku;
     private TextView tvJudulDetail, tvPenulisDetail, tvPenerbitDetail, tvKategoriDetail, tvStokDetail;
-    private Button btnPinjamBuku, btnKembali;
+    private Button btnKembali;
     private List<DataBuku> listDataBuku;
 
     @Override
@@ -42,9 +42,7 @@ public class DetailBukuActivity extends AppCompatActivity implements View.OnClic
         tvKategoriDetail.setText("Kategori : " +mIntent.getStringExtra("kategori"));
         tvStokDetail.setText("Stok : " +mIntent.getStringExtra("stok_buku"));
 
-        btnPinjamBuku = findViewById(R.id.btnPinjamBuku);
         btnKembali = findViewById(R.id.btnKembali);
-        btnPinjamBuku.setOnClickListener(this);
         btnKembali.setOnClickListener(this);
     }
 
@@ -54,17 +52,6 @@ public class DetailBukuActivity extends AppCompatActivity implements View.OnClic
             case R.id.btnKembali:
                 onBackPressed();
                 break;
-            case R.id.btnPinjamBuku:
-                Toast.makeText(this, "Dipinjam", Toast.LENGTH_SHORT).show();
-                Intent intentBukuDipinjam = new Intent(DetailBukuActivity.this, BukuDipinjamActivity.class);
-                startActivity(intentBukuDipinjam
-                        .putExtra("judul_buku", tvJudulDetail.getText())
-                        .putExtra("penulis", tvPenulisDetail.getText())
-                        .putExtra("penerbit", tvPenerbitDetail.getText())
-                        .putExtra("kategori", tvKategoriDetail.getText())
-                        .putExtra("stok_buku", tvStokDetail.getText()));
-                break;
         }
-
     }
 }

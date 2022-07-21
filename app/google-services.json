@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "778789775544",
+    "project_id": "sistemperpustakaanuas-5a895",
+    "storage_bucket": "sistemperpustakaanuas-5a895.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778789775544:android:a7694013c3a20226bfec4d",
+        "android_client_info": {
+          "package_name": "com.example.sistemperpustakaanuas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778789775544-34mv16b7c4vah4tijad4jj6del4beuhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB92ibKtCyFBBQfTjx-ljgQmBZgD01QBF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778789775544-34mv16b7c4vah4tijad4jj6del4beuhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

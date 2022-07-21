@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,33 +15,37 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sistemperpustakaanuas.ClickListener;
 import com.example.sistemperpustakaanuas.R;
+import com.example.sistemperpustakaanuas.activity.BukuDipinjamActivity;
 import com.example.sistemperpustakaanuas.activity.DetailBukuActivity;
+import com.example.sistemperpustakaanuas.activity.ListBukuActivity;
 import com.example.sistemperpustakaanuas.modeldata.DataBuku;
 
 import java.lang.ref.WeakReference;
+import java.text.BreakIterator;
 import java.util.List;
 
 public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.MyViewHolder>{
     private List<DataBuku> listDataBuku;
     private Context context;
+    private final ClickListener clickListener;
 
-    public ListBukuAdapter(List<DataBuku> mListDataBuku, Context mContext){
+    public ListBukuAdapter(List<DataBuku> mListDataBuku, Context mContext, ClickListener mClickListener){
         listDataBuku = mListDataBuku;
         context = mContext;
+        clickListener = mClickListener;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_buku, parent, false));
+        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_buku, parent, false), clickListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         DataBuku dataBuku = listDataBuku.get(position);
-        holder.imgBuku.setImageResource(R.drawable.ic_baseline_book_24);
-        holder.imgArrow.setImageResource(R.drawable.ic_baseline_arrow_forward_ios_24);
 
+        holder.imgBuku.setImageResource(R.drawable.ic_baseline_book_24);
         holder.tvJudulBuku.setText("Judul : " +dataBuku.getJudul_buku());
         holder.tvPenulis.setText("Penulis : " +dataBuku.getPenulis_buku());
 
@@ -65,20 +70,33 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.MyView
         return listDataBuku.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tvJudulBuku, tvPenerbit, tvKategori, tvPenulis;
-        public ImageView imgBuku, imgArrow;
+        public ImageView imgBuku;
+        public Button btnPinjam;
+        private WeakReference<ClickListener> listenerRef;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, ClickListener clickListener) {
             super(itemView);
 
+            listenerRef = new WeakReference<>(clickListener);
             tvJudulBuku = itemView.findViewById(R.id.tvJudul);
             tvPenerbit = itemView.findViewById(R.id.tvPenerbit);
             tvPenulis = itemView.findViewById(R.id.tvPenulis);
             tvKategori = itemView.findViewById(R.id.tvKategori);
             imgBuku = itemView.findViewById(R.id.imgBuku);
-            imgArrow = itemView.findViewById(R.id.imgArrow);
+            btnPinjam = itemView.findViewById(R.id.btnPinjam);
+
+            btnPinjam = itemView.findViewById(R.id.btnPinjam);
+            btnPinjam.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            if (view.getId() == btnPinjam.getId()){
+                Toast.makeText(view.getContext(), "Dipinjam", Toast.LENGTH_SHORT).show();
+            }
+            listenerRef.get().onPositionClicked(getAdapterPosition());
+        }
     }
 }

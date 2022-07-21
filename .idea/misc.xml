@@ -14,7 +14,9 @@
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_riwayat_pinjam.xml" value="0.203125" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
-        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_list_buku.xml" value="0.203125" />
+        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_buku_dipinjam.xml" value="0.20416666666666666" />
+        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_list_buku.xml" value="0.25" />
+        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_riwayat_pinjam.xml" value="0.203125" />
       </map>
     </option>
   </component>

@@ -60,14 +60,13 @@
                 tools:text="ini kategori" />
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btnPinjam"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:backgroundTint="#4CAF50"
-            android:text="Pinjam"/>
+            tools:src="@drawable/ic_baseline_arrow_forward_ios_24" />
     </RelativeLayout>
 
 </RelativeLayout>

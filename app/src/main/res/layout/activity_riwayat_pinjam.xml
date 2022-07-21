@@ -22,6 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDaftarBuku"
         android:background="@color/white"
-        tools:listitem="@layout/item_list_buku" />
+        tools:listitem="@layout/item_riwayat_pinjam" />
 
 </RelativeLayout>
