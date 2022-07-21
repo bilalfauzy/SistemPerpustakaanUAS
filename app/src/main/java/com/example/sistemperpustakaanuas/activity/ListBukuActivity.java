@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sistemperpustakaanuas.ApiCallback;
 import com.example.sistemperpustakaanuas.ClickListener;
 import com.example.sistemperpustakaanuas.R;
 import com.example.sistemperpustakaanuas.adapter.ListBukuAdapter;
@@ -29,6 +30,7 @@ public class ListBukuActivity extends AppCompatActivity {
     private ApiInterface mApiInterface;
     private RecyclerView.Adapter listAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ApiCallback apiCallback;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +55,7 @@ public class ListBukuActivity extends AppCompatActivity {
             public void onResponse(Call<GetDataBuku> call, Response<GetDataBuku> response) {
                 List<DataBuku> listBuku = response.body().getListBuku();
                 listAdapter = new ListBukuAdapter(listBuku, getApplicationContext());
+                apiCallback.onSuccessGetBuku(listBuku);
                 rvListBuku.setAdapter(listAdapter);
                 Log.d("Retrofit Get", "Jumlah data buku :" +String.valueOf(listBuku.size()));
             }

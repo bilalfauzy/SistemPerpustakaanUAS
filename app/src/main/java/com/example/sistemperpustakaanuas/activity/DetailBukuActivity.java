@@ -12,11 +12,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sistemperpustakaanuas.R;
+import com.example.sistemperpustakaanuas.modeldata.DataBuku;
+
+import java.util.List;
 
 public class DetailBukuActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageView sampulBuku;
-    TextView tvJudulDetail, tvPenulisDetail, tvPenerbitDetail, tvKategoriDetail, tvStokDetail;
-    Button btnPinjamBuku, btnKembali;
+    private ImageView sampulBuku;
+    private TextView tvJudulDetail, tvPenulisDetail, tvPenerbitDetail, tvKategoriDetail, tvStokDetail;
+    private Button btnPinjamBuku, btnKembali;
+    private List<DataBuku> listDataBuku;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +56,13 @@ public class DetailBukuActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.btnPinjamBuku:
                 Toast.makeText(this, "Dipinjam", Toast.LENGTH_SHORT).show();
+                Intent intentBukuDipinjam = new Intent(DetailBukuActivity.this, BukuDipinjamActivity.class);
+                startActivity(intentBukuDipinjam
+                        .putExtra("judul_buku", tvJudulDetail.getText())
+                        .putExtra("penulis", tvPenulisDetail.getText())
+                        .putExtra("penerbit", tvPenerbitDetail.getText())
+                        .putExtra("kategori", tvKategoriDetail.getText())
+                        .putExtra("stok_buku", tvStokDetail.getText()));
                 break;
         }
 
