@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:background="@color/backgroundsilver">
 
@@ -25,11 +25,34 @@
                 android:layout_height="match_parent"
                 android:padding="20dp">
 
+                <RelativeLayout
+                    android:id="@+id/kontainer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/imgbuku"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_baseline_book_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/imgbuku"
+                        android:text="Daftar Buku"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
                 <Button
                     android:id="@+id/btn_list_buku"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Daftar buku" />
+                    android:layout_below="@+id/kontainer1"
+                    android:text="lihat" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -48,11 +71,34 @@
                 android:layout_height="match_parent"
                 android:padding="20dp">
 
+                <RelativeLayout
+                    android:id="@+id/kontainer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/imgpinjam"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_baseline_favorite_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/imgpinjam"
+                        android:text="Daftar Pinjaman"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
                 <Button
                     android:id="@+id/btn_buku_dipinjam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Daftar pinjaman" />
+                    android:layout_below="@+id/kontainer2"
+                    android:text="Lihat" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -70,11 +116,34 @@
                 android:layout_height="match_parent"
                 android:padding="20dp">
 
+                <RelativeLayout
+                    android:id="@+id/kontainer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/imgriwayat"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_baseline_history_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/imgriwayat"
+                        android:text="Riwayat Pinjaman"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
                 <Button
                     android:id="@+id/btn_riwayat_peminjaman"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Riwayat peminjaman" />
+                    android:layout_below="@+id/kontainer3"
+                    android:text="Lihat" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

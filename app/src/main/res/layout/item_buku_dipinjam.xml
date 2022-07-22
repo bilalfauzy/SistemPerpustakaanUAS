@@ -18,55 +18,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/imgArrow">
+            android:layout_toStartOf="@+id/btnKembalikan">
 
             <ImageView
-                android:id="@+id/imgBuku"
+                android:id="@+id/imgBuku1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tvJudul"
+                android:id="@+id/tvJudul1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_toEndOf="@+id/imgBuku"
+                android:layout_toEndOf="@+id/imgBuku1"
                 android:textStyle="bold"
                 tools:text="JUDUL NICH" />
 
             <TextView
-                android:id="@+id/tvPenulis"
+                android:id="@+id/tvPenulis1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvJudul"
-                android:layout_alignStart="@+id/tvJudul"
+                android:layout_below="@+id/tvJudul1"
+                android:layout_alignStart="@+id/tvJudul1"
                 tools:text="ini penulis" />
 
             <TextView
-                android:id="@+id/tvPenerbit"
+                android:id="@+id/tvPenerbit1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvPenulis"
-                android:layout_alignStart="@+id/tvJudul"
+                android:layout_below="@+id/tvPenulis1"
+                android:layout_alignStart="@+id/tvJudul1"
                 tools:text="ini penerbit" />
 
             <TextView
-                android:id="@+id/tvKategori"
+                android:id="@+id/tvKategori1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvPenerbit"
-                android:layout_alignStart="@+id/tvJudul"
+                android:layout_below="@+id/tvPenerbit1"
+                android:layout_alignStart="@+id/tvJudul1"
                 tools:text="ini kategori" />
         </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imgArrow"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <Button
+            android:id="@+id/btnKembalikan"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            tools:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+            android:backgroundTint="#4CAF50"
+            android:text="Kembalikan"/>
     </RelativeLayout>
 
 </RelativeLayout>

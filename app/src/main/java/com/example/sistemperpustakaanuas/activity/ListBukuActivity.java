@@ -20,6 +20,7 @@ import com.example.sistemperpustakaanuas.apiservice.ApiInterface;
 import com.example.sistemperpustakaanuas.modeldata.DataBuku;
 import com.example.sistemperpustakaanuas.modeldata.GetDataBuku;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
@@ -56,24 +57,17 @@ public class ListBukuActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetDataBuku> call, Response<GetDataBuku> response) {
                 List<DataBuku> listBuku = response.body().getListBuku();
+                apiCallback.onSuccessGetBuku(listBuku);
                 listAdapter = new ListBukuAdapter(listBuku, getApplicationContext(), new ClickListener() {
                     @Override
                     public void onPositionClicked(int position) {
-                        DataBuku dataBuku = listBuku.get(position);
+                        //DataBuku dataBuku = listBuku.get(position);
                         Intent i = new Intent(getApplicationContext(), BukuDipinjamActivity.class);
-                        i.putExtra("id_buku", dataBuku.getId_buku());
-                        i.putExtra("sampul_buku", dataBuku.getSampul_buku());
-                        i.putExtra("judul_buku", dataBuku.getJudul_buku());
-                        i.putExtra("penulis", dataBuku.getPenulis_buku());
-                        i.putExtra("penerbit", dataBuku.getPenerbit_buku());
-                        i.putExtra("kategori", dataBuku.getKategori_buku());
-                        i.putExtra("stok_buku", dataBuku.getStok_buku());
-                        i.putExtra("rak", dataBuku.getRak_buku());
-                        i.putExtra("rak_baris", dataBuku.getRak_baris_buku());
+                        i.putExtra("listbuku", (Serializable) listBuku);
                         startActivity(i);
+                        listAdapter.notifyItemInserted(position);
                     }
                 });
-                apiCallback.onSuccessGetBuku(listBuku);
                 rvListBuku.setAdapter(listAdapter);
                 Log.d("Retrofit Get", "Jumlah data buku :" +String.valueOf(listBuku.size()));
             }

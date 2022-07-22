@@ -21,42 +21,42 @@
             android:layout_toStartOf="@+id/imgArrow">
 
             <ImageView
-                android:id="@+id/imgBuku"
+                android:id="@+id/imgBuku2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tvJudul"
+                android:id="@+id/tvJudul2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_toEndOf="@+id/imgBuku"
+                android:layout_toEndOf="@+id/imgBuku2"
                 android:textStyle="bold"
                 tools:text="JUDUL NICH" />
 
             <TextView
-                android:id="@+id/tvPenulis"
+                android:id="@+id/tvPenulis2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvJudul"
-                android:layout_alignStart="@+id/tvJudul"
+                android:layout_below="@+id/tvJudul2"
+                android:layout_alignStart="@+id/tvJudul2"
                 tools:text="ini penulis" />
 
             <TextView
-                android:id="@+id/tvPenerbit"
+                android:id="@+id/tvPenerbit2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvPenulis"
-                android:layout_alignStart="@+id/tvJudul"
+                android:layout_below="@+id/tvPenulis2"
+                android:layout_alignStart="@+id/tvJudul2"
                 tools:text="ini penerbit" />
 
             <TextView
-                android:id="@+id/tvKategori"
+                android:id="@+id/tvKategori2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvPenerbit"
-                android:layout_alignStart="@+id/tvJudul"
+                android:layout_below="@+id/tvPenerbit2"
+                android:layout_alignStart="@+id/tvJudul2"
                 tools:text="ini kategori" />
         </RelativeLayout>
 

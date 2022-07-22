@@ -2,7 +2,10 @@ package com.example.sistemperpustakaanuas.modeldata;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DataBuku {
+import java.io.Serializable;
+
+
+public class DataBuku implements Serializable {
     @SerializedName("id")
     private String id_buku;
     @SerializedName("judul")
@@ -105,4 +108,5 @@ public class DataBuku {
     public void setRak_baris_buku(String rak_baris_buku) {
         this.rak_baris_buku = rak_baris_buku;
     }
+
 }

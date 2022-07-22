@@ -17,7 +17,7 @@
         android:text="Riwayat Peminjaman Buku"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_pinjaman"
+        android:id="@+id/rv_riwayat_pinjam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDaftarBuku"
