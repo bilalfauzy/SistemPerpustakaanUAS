@@ -57,7 +57,6 @@ public class ListBukuActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetDataBuku> call, Response<GetDataBuku> response) {
                 List<DataBuku> listBuku = response.body().getListBuku();
-                apiCallback.onSuccessGetBuku(listBuku);
                 listAdapter = new ListBukuAdapter(listBuku, getApplicationContext(), new ClickListener() {
                     @Override
                     public void onPositionClicked(int position) {

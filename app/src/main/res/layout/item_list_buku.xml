@@ -10,64 +10,69 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="5dp">
+        android:background="@color/white">
 
         <RelativeLayout
-            android:id="@+id/kontainer1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/imgArrow">
+            android:background="@drawable/selector"
+            android:padding="5dp">
 
-            <ImageView
-                android:id="@+id/imgBuku"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                tools:src="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/tvJudul"
+            <RelativeLayout
+                android:id="@+id/kontainer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@+id/imgBuku"
-                android:textStyle="bold"
-                tools:text="JUDUL NICH" />
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/btnPinjam">
 
-            <TextView
-                android:id="@+id/tvPenulis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvJudul"
-                android:layout_alignStart="@+id/tvJudul"
-                tools:text="ini penulis" />
+                <ImageView
+                    android:id="@+id/imgBuku"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    tools:src="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/tvPenerbit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvPenulis"
-                android:layout_alignStart="@+id/tvJudul"
-                tools:text="ini penerbit" />
+                <TextView
+                    android:id="@+id/tvJudul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/imgBuku"
+                    android:textStyle="bold"
+                    tools:text="JUDUL NICH" />
 
-            <TextView
-                android:id="@+id/tvKategori"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvPenulis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvJudul"
+                    android:layout_alignStart="@+id/tvJudul"
+                    tools:text="ini penulis" />
+
+                <TextView
+                    android:id="@+id/tvPenerbit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvPenulis"
+                    android:layout_alignStart="@+id/tvJudul"
+                    tools:text="ini penerbit" />
+
+                <TextView
+                    android:id="@+id/tvKategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvPenerbit"
+                    android:layout_alignStart="@+id/tvJudul"
+                    tools:text="ini kategori" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnPinjam"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvPenerbit"
-                android:layout_alignStart="@+id/tvJudul"
-                tools:text="ini kategori" />
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="#4CAF50"
+                android:text="Pinjam" />
         </RelativeLayout>
-
-        <Button
-            android:id="@+id/btnPinjam"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:backgroundTint="#4CAF50"
-            android:text="Pinjam"/>
     </RelativeLayout>
-
 </RelativeLayout>

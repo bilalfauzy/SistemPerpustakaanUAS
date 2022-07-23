@@ -22,9 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RiwayatPinjamActivity extends AppCompatActivity {
-    public static ListBukuActivity lb;
     private RecyclerView rvListBuku;
-    private ApiInterface mApiInterface;
     private RecyclerView.Adapter listAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -38,8 +36,6 @@ public class RiwayatPinjamActivity extends AppCompatActivity {
 
         mLayoutManager = new LinearLayoutManager(this);
         rvListBuku.setLayoutManager(mLayoutManager);
-
-        mApiInterface = ApiClient.getClient().create(ApiInterface.class);
 
         List<DataBuku> listDataBuku = new ArrayList<DataBuku>();
         Intent getIntent = getIntent();

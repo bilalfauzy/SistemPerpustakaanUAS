@@ -63,7 +63,11 @@ public class ListPinjamanAdapter extends RecyclerView.Adapter<ListPinjamanAdapte
 
     @Override
     public int getItemCount() {
-        return listBukuPinjaman.size();
+        if(listBukuPinjaman.size() == 0){
+            return 0;
+        }else {
+            return listBukuPinjaman.size();
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

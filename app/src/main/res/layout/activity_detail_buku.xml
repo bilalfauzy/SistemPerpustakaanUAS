@@ -85,15 +85,6 @@
 
 
             <Button
-                android:id="@+id/btnPinjamBuku"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/kontainer"
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="#4CAF50"
-                android:text="Pinjam" />
-
-            <Button
                 android:id="@+id/btnKembali"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

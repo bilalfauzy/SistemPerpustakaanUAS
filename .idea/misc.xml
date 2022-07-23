@@ -8,6 +8,7 @@
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1315" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.1315" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/drawable/select.xml" value="0.1315" />
+        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/drawable/selector.xml" value="0.1315" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/drawable/user.xml" value="0.1315" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_buku_dipinjam.xml" value="0.20416666666666666" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_detail_buku.xml" value="0.203125" />
@@ -15,12 +16,14 @@
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_list_buku.xml" value="0.203125" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_riwayat_pinjam.xml" value="0.203125" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_buku_dipinjam.xml" value="0.20416666666666666" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_list_buku.xml" value="0.25" />
         <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/layout/item_riwayat_pinjam.xml" value="0.203125" />
+        <entry key="..\:/projekAndroid/dicodingProject/SistemPerpustakaanUAS/app/src/main/res/menu/bot_nav.xml" value="0.20092592592592592" />
       </map>
     </option>
   </component>
